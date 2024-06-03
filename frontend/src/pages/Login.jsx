@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import "./Login.css"
 
 function Login() {
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        console.log(username, password);
+    };
 
     return (
         <div className='flex h-screen'>
@@ -18,7 +21,7 @@ function Login() {
                     </div>
                 </div>
 
-                <div className="login bg-white shadow-md border rounded p-9 mb-3">
+                <form onSubmit={handleLogin} className="login bg-white shadow-md border rounded p-9 mb-3">
                     <div className="flex flex-col">
                         <label className='my-3' htmlFor="usuario">Usuário</label>
                         <input className='border p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-600' type="text" id="usuario" placeholder="Usuário" onChange={(e) => setUsername(e.target.value)} />
@@ -34,7 +37,7 @@ function Login() {
                     <div className='w-full mt-5'>
                         <button className='bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 font-bold rounded w-full'>Entrar</button>
                     </div>
-                </div>
+                </form>
 
                 <div className="register">
                     <p>Não possui uma conta? <a href="/cadastro" className='text-blue-500 hover:text-blue-700 underline'>Clique aqui</a></p>
