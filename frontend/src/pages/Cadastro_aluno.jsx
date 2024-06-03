@@ -24,7 +24,7 @@ function Cadastro_aluno() {
 
     return (
         <div className='m-2'>
-            <a href="/dashboard" className="flex items-center m-4">
+            <a href="/home" className="flex items-center m-4">
                 <box-icon name='arrow-back'></box-icon> <span className="ml-2">Voltar</span>
             </a>
 
