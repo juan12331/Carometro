@@ -7,6 +7,7 @@ function Login() {
     const handleLogin = (event) => {
         event.preventDefault();
         console.log(username, password);
+        window.location.href = '/home';
     };
 
     return (
